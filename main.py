@@ -55,5 +55,8 @@ forest_reg = RandomForestRegressor(random_state=42)
 forest_reg.fit(housing_prepared, house_price)
 forest_preds = forest_reg.predict(housing_prepared)
 
-joblib.dump(forest_reg, "model.pkl")
-joblib.dump(full_pipeline, "preprocessor.pkl")
+# joblib.dump(forest_reg, "model.pkl")
+# joblib.dump(full_pipeline, "preprocessor.pkl")
+
+joblib.dump(forest_reg, "model.pkl", compress=3)
+joblib.dump(full_pipeline, "preprocessor.pkl", compress=3)
